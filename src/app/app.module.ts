@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RecipeNoteService } from '../services/recipe-note.service';
 import { NoteComponent } from './note/note.component';
+import { NoteEditorComponent } from './note-editor/note-editor.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NoteComponent
+    NoteComponent,
+    NoteEditorComponent
   ],
   imports: [
     BrowserModule,

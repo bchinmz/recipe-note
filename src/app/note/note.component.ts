@@ -11,15 +11,9 @@ export class NoteComponent implements OnInit {
   @Input('content')
   public recipeNote: RecipeNote;
 
-  public editable: boolean = false;
-
   constructor() { }
 
   ngOnInit() {
-  }
-
-  enableEdit() {
-    this.editable = true;
   }
 
 }
