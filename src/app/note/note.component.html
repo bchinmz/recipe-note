@@ -3,12 +3,21 @@
     <div class="card-header d-flex">
       <h5 class="modal-title">{{ recipeNote.title }}</h5>
       
-      <button type="button" class="ml-auto">
+      <button type="button" class="ml-auto" data-toggle="collapse" data-target="#collapseExample">
         <span class="oi oi-menu"></span>
       </button>
     </div>
     <div class="card-body">
       <p class="card-text">{{ recipeNote.description }}</p>
+    </div>
+  </div>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <ul>
+        <li><a href="#">Add</a></li>
+        <li><a href="#">Edit</a></li>
+        <li><a href="#">Delete</a></li>
+      </ul>
     </div>
   </div>
 </div>

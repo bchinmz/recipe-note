@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="text-center">Recipe notes</h1>
-  <div *ngFor="let recipeNote of recipeNotes">
-    <app-note [content]="recipeNote"></app-note>
+  <div *ngFor="let recipeNote of recipeNotes" class="row justify-content-md-center">
+    <app-note [content]="recipeNote" class="col col-md-6 col-sm-12"></app-note>
   </div>
 </div>
