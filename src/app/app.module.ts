@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RecipeNoteService } from '../services/recipe-note.service';
 import { NoteComponent } from './note/note.component';
 import { NoteEditorComponent } from './note-editor/note-editor.component';
+import { RecipeNoteServiceMock } from '../services/recipe-note.service.mock';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { NoteEditorComponent } from './note-editor/note-editor.component';
     BrowserModule,
     HttpClientModule,
   ],
-  providers: [ RecipeNoteService ],
+  providers: [ RecipeNoteService, RecipeNoteServiceMock ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

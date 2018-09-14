@@ -1,31 +1,33 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { HttpClient } from '@angular/common/http';
-import { RecipeNote, RecipeNotes } from "../model/models";
+import { RecipeNote, RecipeNotes, ApiResponse } from "../model/models";
 import 'rxjs/add/observable/of';
 
+export interface IRecipeNoteService {
+    get(): Observable<RecipeNotes>;
+    delete(id: number): Observable<ApiResponse>;
+    update(): Observable<ApiResponse>;
+    create(): Observable<ApiResponse>;
+}
 
 @Injectable()
-export class RecipeNoteService {
+export class RecipeNoteService implements IRecipeNoteService {
     constructor(
-        protected http:HttpClient,
-      ){}
-      
-     public get() : Observable<RecipeNotes> {
-        //return this.http.get<RecipeNotes>('https://mkv0jlf8b6.execute-api.ap-southeast-1.amazonaws.com/dev/recipeNotesFunc')
-        return Observable.of([
-            {
-                title: "toast",
-                description: "10mins",
-            } as RecipeNote,
-            {
-                title: "roast",
-                description: "45mins",
-            } as RecipeNote,
-            {
-                title: "steam",
-                description: "15mins",
-            } as RecipeNote
-        ]);
+        protected http: HttpClient,
+    ) { }
+
+    public get(): Observable<RecipeNotes> {
+        return this.http.get<RecipeNotes>('https://mkv0jlf8b6.execute-api.ap-southeast-1.amazonaws.com/dev/recipeNotesFunc')
+    }
+
+    delete(id: number): Observable<ApiResponse> {
+        throw new Error("Method not implemented.");
+    }
+    update(): Observable<ApiResponse> {
+        throw new Error("Method not implemented.");
+    }
+    create(): Observable<ApiResponse> {
+        throw new Error("Method not implemented.");
     }
 }
