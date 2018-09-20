@@ -1,11 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
-import { HttpClient } from '@angular/common/http';
 import { RecipeNote, RecipeNotes, ApiResponse } from "../model/models";
 import 'rxjs/add/observable/of';
 import { IRecipeNoteService } from "./recipe-note.service";
-import { Subject } from "rxjs/Subject";
-
 
 @Injectable()
 export class RecipeNoteServiceMock implements IRecipeNoteService {
@@ -31,18 +28,6 @@ export class RecipeNoteServiceMock implements IRecipeNoteService {
         ]
     }
 
-    private recipeNoteUpdateSource = new Subject<number>();
-    recipeNoteDeleted$ = this.recipeNoteUpdateSource.asObservable();
-    recipeNoteUpdated$ = this.recipeNoteUpdateSource.asObservable();
-
-    updateRecipeNote(noteId: number) {
-        this.recipeNoteUpdateSource.next(noteId);
-    }
-
-    deleteRecipeNote(noteId: number) {
-        this.recipeNoteUpdateSource.next(noteId);
-    }
-
     get(): Observable<RecipeNotes> {
         return Observable.of(this.recipeNotes);
     }
@@ -58,7 +43,7 @@ export class RecipeNoteServiceMock implements IRecipeNoteService {
         throw new Error("Method not implemented.");
     }
 
-    create(): Observable<ApiResponse> {
+    create(recipeNote: RecipeNote): Observable<ApiResponse> {
         throw new Error("Method not implemented.");
     }
 }

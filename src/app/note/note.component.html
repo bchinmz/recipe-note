@@ -7,8 +7,8 @@
         <span class="oi oi-menu"></span>
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="btn dropdown-item" href="#">Add</a>
-        <a class="btn dropdown-item" href="#">Edit</a>
+        <a class="btn dropdown-item" (click)="addNote()">Add</a>
+        <a class="btn dropdown-item" (click)="editNote()">Edit</a>
         <a class="btn dropdown-item" (click)="deleteNote()">Delete</a>
       </div>
     </div>

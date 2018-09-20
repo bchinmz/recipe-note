@@ -8,7 +8,7 @@ export interface IRecipeNoteService {
     get(): Observable<RecipeNotes>;
     delete(id: number): Observable<ApiResponse>;
     update(): Observable<ApiResponse>;
-    create(): Observable<ApiResponse>;
+    create(recipeNote: RecipeNote): Observable<ApiResponse>;
 }
 
 @Injectable()
@@ -27,7 +27,7 @@ export class RecipeNoteService implements IRecipeNoteService {
     update(): Observable<ApiResponse> {
         throw new Error("Method not implemented.");
     }
-    create(): Observable<ApiResponse> {
+    create(recipeNote: RecipeNote): Observable<ApiResponse> {
         throw new Error("Method not implemented.");
     }
 }
